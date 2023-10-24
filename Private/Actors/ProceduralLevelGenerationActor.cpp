@@ -138,7 +138,7 @@ TArray<FName> AProceduralLevelGenerationActor::GetSelectedLevelGenerationSetting
 		return LevelGenerationSettingsDataTable->GetRowNames();
 	}
 
-	UE_LOG(LogTemp, Warning, TEXT("AWeapon_Base::GetSelectedWeaponOptions WeaponDataTable is invalid!"));
+	UE_LOG(LogTemp, Warning, TEXT("AProceduralLevelGenerationActor::GetSelectedLevelGenerationSettings LevelGenerationSettingsDataTable is invalid!"));
 	return TArray<FName>();
 }
 
@@ -148,12 +148,12 @@ void AProceduralLevelGenerationActor::GetLevelGenerationSettings()
 
 	if (LevelGenerationSettingsDataTable)
 	{
-		static const FString ContextString(TEXT("GetSelectedWeaponOptions"));
+		static const FString ContextString(TEXT("GetLevelGenerationSettings"));
 		LevelGenerationSettingsPtr = LevelGenerationSettingsDataTable->FindRow<FLevelGenerationSettings>(LevelSettingsProfile, ContextString, true);
 	}
 	else
 	{
-		UE_LOG(LogTemp, Warning, TEXT("AWeapon_Base::GetSelectedWeaponOptions WeaponDataTable is invalid!"));
+		UE_LOG(LogTemp, Warning, TEXT("AProceduralLevelGenerationActor::GetLevelGenerationSettings LevelGenerationSettingsDataTable is invalid!"));
 	}
 
 	if (LevelGenerationSettingsPtr)
